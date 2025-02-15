@@ -1,0 +1,169 @@
+---
+title: "Ejercicios1"
+format: html
+editor: visual
+---
+
+## Peso al nacer
+
+Leer el dataset que se encuentra en data/birthweight_reduced.csv.
+
+```{r}
+bwt <- read.csv("./data/birthweight_reduced.csv")
+head(bwt)
+```
+
+Convertir la columna smoker en un factor con los valores: 1- 'YES' 0- 'NO'
+
+```{r}
+bwt$smoker <- factor(bwt$smoker, labels = c('NO','YES'))
+```
+
+Para la columna Birthweight:
+
+1- Calcular media, mediana y los cuartiles
+
+```{r}
+cat("La media es", mean(bwt$Birthweight),"\n")
+cat("La mediana es", median(bwt$Birthweight), "\n")
+cat("Los cuartiles son:", paste(quantile(bwt$Birthweight, probs = c(0.25,0.5,0.75)), collapse = ", "), "\n")
+```
+
+2- Dibujar un Boxplot. Y decir cuales son los outliers, y ver si veis alguna caracteristica importante.
+
+```{r}
+library(ggplot2)
+ggplot(data=bwt, aes(y=Birthweight))+geom_boxplot()
+```
+
+3-¿Cuantas madres fumadoras y no fumadoras hay?
+
+```{r}
+table(bwt$smoker)
+```
+
+```{r}
+cat("Madres fumadoras",sum(bwt$smoker=='YES'),"\n")
+cat("Madres NO fumadoras",sum(bwt$smoker=='NO'),"\n")
+```
+
+```{r}
+library(tidyverse)
+bwt |> group_by(smoker) |> summarize(num=n())
+```
+
+4- ¿Cual es el peso medio de los niños al nacer para las madres fumadoras y no fumadoras?
+
+```{r}
+
+cat("El peso medio de los hijos de madres fumadores es: ", mean(bwt$Birthweight[which(bwt$smoker=='YES')]),"\n")
+cat("El peso medio de los hijos de madres NO fumadores es: ",
+    mean(bwt$Birthweight[which(bwt$smoker=='NO')]),"\n")
+```
+
+```{r}
+library(tidyverse)
+bwt |> group_by(smoker) |> summarize(num=n(), media=mean(Birthweight))
+```
+
+5- ¿Cual de los dos grupos presenta una varianza mayor?
+
+```{r}
+
+cat("La varianza media de los hijos de madres fumadores es: ", var(bwt$Birthweight[which(bwt$smoker=='YES')]),"\n")
+cat("La varianza media de los hijos de madres NO fumadores es: ",
+    var(bwt$Birthweight[which(bwt$smoker=='NO')]),"\n")
+```
+
+```{r}
+library(tidyverse)
+bwt |> group_by(smoker) |> summarize(num=n(), 
+                                     media=mean(Birthweight),
+                                     varianza=var(Birthweight))
+```
+
+6- Pinta un Boxplot del peso para cada uno de los grupos
+
+```{r}
+ggplot(data=bwt, aes(y=Birthweight,x=smoker))+geom_boxplot()+
+  geom_violin(color='blue', alpha=0.8)
+```
+
+## Ciudades soleadas
+
+Vamos a leer el dataset cities_sunny. Muestra las horas de sol medias que tienen diferentes ciudades en un mes determinado.
+
+```{r}
+df_sunny <- read.csv("./data/cities_sunny.csv")
+head(df_sunny)
+```
+
+1- ¿Cuantos paises hay? ¿Cuantas Ciudades?
+
+```{r}
+cat("Hay",nrow(df_sunny),"ciudades")
+cat(" y ",length(unique(df_sunny$Country)),"paises")
+```
+
+Numero de ciudades por pais. Hay tantas filas como paises:
+
+```{r}
+df_sunny |> group_by(Country) |> summarise(num=n())
+```
+
+Numero de ciudades:
+
+```{r}
+df_sunny |> group_by(Country) |> summarise(num=n())
+```
+
+2- ¿Cual es la ciudad que más horas de sol tiene en enero?
+
+```{r}
+df_sunny[which.max(df_sunny$Jan), c('Country', 'City')]
+```
+
+3- ¿Cual es la ciudad que más horas de sol totales tiene en los meses de Enero, Febrero y Marzo? (suma los 3 meses y encuentra la ciudad con el máximo)
+
+```{r}
+df_sunny$trimestre <- df_sunny$Jan+df_sunny$Feb+df_sunny$Mar
+df_sunny[which.max(df_sunny$trimestre), c('Country', 'City')]
+
+```
+
+4- ¿Cual es la ciudad que más horas de sol tiene en todo el año? (sumando todos los meses)
+
+```{r}
+df_sunny$todo_año <- rowSums(df_sunny[,c(3:14)])
+df_sunny[which.max(df_sunny$todo_año), c('Country', 'City', 'todo_año')]
+```
+
+5- En el dataset, ¿cual es el país que tiene más ciudades?. Muestra el número medio de horas mensuales en enero para las ciudades de ese país.
+
+```{r}
+num_city <- table(df_sunny$Country)
+num_city[which.max(num_city)]
+```
+
+```{r}
+df_sunny |> group_by(Country) |> summarize(num=n()) |> arrange(desc(num)) |> top_n(1)
+```
+
+6- ¿Cual es el número medio de horas soleadas al mes en Madrid? ¿y su mediana?
+
+```{r}
+rowMeans(df_sunny[df_sunny$City=='Madrid',c(3:14)])
+```
+
+```{r}
+mean(unlist(df_sunny[df_sunny$City=='Madrid',c(3:14)]))
+```
+
+```{r}
+median(unlist(df_sunny[df_sunny$City=='Madrid',c(3:14)]))
+```
+
+```{r}
+df_sunny |> filter(City=='Madrid') |> 
+  select(Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec) |> rowMeans()
+```
