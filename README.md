@@ -13,5 +13,6 @@
         <li>etc.</li>
     </ul>
     <p>Y finalmente se crea un modelo predictivo.</p>
-
     <h1>2 - Práctica de Álgebra lineal enfocada en Regresión lineal, desarrollado en Python.</h1>
+    
+    
