@@ -7,35 +7,28 @@ Este módulo proporciona una introducción a técnicas avanzadas de análisis de
 
  _Estadística:_  El análisis estadístico es fundamental para la toma de decisiones basada en datos. En este módulo, se aplican diversas técnicas estadísticas para describir, inferir y modelar datos de manera efectiva.
   
+_Funciones de Probabilidad:_ Las funciones de probabilidad permiten modelar fenómenos aleatorios y analizar la distribución de datos. Entre las distribuciones más utilizadas se encuentran:  
+- **Distribución Normal** 
+- **Distribución Binomial**  
+- **Distribución Poisson**  
 
-#### Funciones de Probabilidad  
-Las funciones de probabilidad permiten modelar fenómenos aleatorios y analizar la distribución de datos. Entre las distribuciones más utilizadas se encuentran:  
-- **Distribución Normal**:  
-- **Distribución Binomial**:  
-- **Distribución Poisson**:  
- 
-#### Test Estadísticos  
-Se utilizan pruebas estadísticas para evaluar hipótesis y comparar grupos de datos:  
+_Test Estadísticos:_ Se utilizan pruebas estadísticas para evaluar hipótesis y comparar grupos de datos:  
 - **Test de Student (t-test)**: Compara la media de dos grupos y evalúa si las diferencias son estadísticamente significativas.  
  - **ANOVA (Análisis de Varianza)**: Evalúa si existen diferencias significativas entre más de dos grupos.  
 - **Test de Tukey**: Comparación post-hoc tras ANOVA para identificar grupos diferentes.  
 - **P-valor**: Indica la probabilidad de obtener los resultados observados si la hipótesis nula es verdadera. Si \( p < 0.05 \), se rechaza la hipótesis nula.  
 
-#### Análisis Multivariable  
-Permite analizar la relación entre múltiples variables simultáneamente:  
+_Análisis Multivariable:_ Permite analizar la relación entre múltiples variables simultáneamente:  
 - **Regresión Múltiple**  
 - **Coeficiente de Determinación \( R^2 \)**: Mide la proporción de variabilidad explicada por el modelo.  
 
-  
-### Álgebra Lineal y Transformaciones  
-El álgebra lineal es fundamental en la manipulación de datos en machine learning y estadísticas:  
+---
+
+_Álgebra Lineal y Transformaciones:_ El álgebra lineal es fundamental en la manipulación de datos en machine learning y estadísticas:  
 - **Normalización de datos**:  Escalar datos para mejorar la estabilidad numérica de los modelos. 
-
-### _Regresión Lineal_ :Es un método estadístico clave para modelar relaciones entre variables. Se utiliza en predicción, análisis de tendencias y optimización.  
-La regresión lineal se usa en múltiples disciplinas como economía, biología, y ciencias sociales para entender relaciones entre variables y hacer predicciones.  
-
-### Minería de Datos  
-Incluye técnicas para extraer patrones y conocimiento de grandes volúmenes de datos:  
+- **Regresión Lineal** :Es un método estadístico clave para modelar relaciones entre variables. Se utiliza en predicción, análisis de tendencias y optimización.  
+*La regresión lineal se usa en múltiples disciplinas como economía, biología, y ciencias sociales para entender relaciones entre variables y hacer predicciones.* 
+- **Minería de Datos**:Incluye técnicas para extraer patrones y conocimiento de grandes volúmenes de datos:  
 - **Clustering**: Algoritmos como K-Means y DBSCAN para segmentación de datos.  
 - **Reducción de dimensionalidad**: PCA para mejorar la eficiencia del análisis.  
 - **Modelos predictivos**: Aplicación de regresión y aprendizaje automático.  
