@@ -8,8 +8,8 @@ Este módulo proporciona una introducción a técnicas avanzadas de análisis de
  _Estadística:_  El análisis estadístico es fundamental para la toma de decisiones basada en datos. En este módulo, se aplican diversas técnicas estadísticas para describir, inferir y modelar datos de manera efectiva.
   
 _Funciones de Probabilidad:_ Las funciones de probabilidad permiten modelar fenómenos aleatorios y analizar la distribución de datos. Entre las distribuciones más utilizadas se encuentran:  
-- **Distribución Normal** 
-- **Distribución Binomial**  
+- *Distribución Normal* 
+- *Distribución Binomial*  
 - **Distribución Poisson**  
 
 _Test Estadísticos:_ Se utilizan pruebas estadísticas para evaluar hipótesis y comparar grupos de datos:  
