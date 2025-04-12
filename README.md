@@ -1,9 +1,9 @@
 # *Módulo de Estadística, Álgebra Lineal y Data Mining* 
 
-## Descripción  
+## *Descripción*:  
 Este módulo proporciona una introducción a técnicas avanzadas de análisis de datos, combinando herramientas de estadística, álgebra lineal y minería de datos. Se enfoca en la construcción de modelos predictivos utilizando diversas metodologías para la exploración, transformación y modelado de datos.  
 
-## Contenidos  
+## *Contenidos*:  
 
  **Estadística:**  El análisis estadístico es fundamental para la toma de decisiones basada en datos. En este módulo, se aplican diversas técnicas estadísticas para describir, inferir y modelar datos de manera efectiva.
   
@@ -34,7 +34,7 @@ La regresión lineal se usa en múltiples disciplinas como economía, biología,
 - *Modelos predictivos*: Aplicación de regresión y aprendizaje automático.  
 --- 
 
-## Herramientas y Tecnologías Utilizadas  
+## *Herramientas y Tecnologías Utilizadas*:  
 Se emplean herramientas especializadas en análisis de datos y machine learning en **Python** y **R**.  
 
 **Python** es ampliamente utilizado en análisis de datos debido a sus bibliotecas especializadas: 
@@ -48,7 +48,7 @@ Se emplean herramientas especializadas en análisis de datos y machine learning 
 - *Modelos Estadisticos:*  `lm()`, `aov()`
 ---
   
-## Proceso de Trabajo  
+## *Proceso de Trabajo*:  
 1. Exploración de Datos: Análisis inicial de las variables y detección de valores atípicos o datos faltantes.
 2. Preprocesamiento: Normalización y transformación de datos para mejorar el rendimiento del modelo.
 3. Modelado Predictivo: Aplicación de algoritmos de regresión y clustering para generar predicciones.
@@ -56,7 +56,7 @@ Se emplean herramientas especializadas en análisis de datos y machine learning 
 
 ---
 
-## Conclusión  
+## *Conclusión*: 
 Este módulo proporciona una base sólida en análisis de datos, combinando estadística, álgebra lineal y minería de datos para la construcción de modelos predictivos. Se fomenta el uso de herramientas especializadas como **Python** y **R** para la manipulación y análisis de datos en distintos contextos aplicados.
 
  ---
